@@ -8,30 +8,30 @@ services:
     env_file: ./.env
     restart: unless-stopped
     tty: True
-#    command: python manage.py runserver 0.0.0.0:8000
+    #command: python manage.py runserver 0.0.0.0:7000
     volumes:
       - ./app:/code/app
     ports:
-      - "8000:8000"
-    depends_on:
-      - db
+      - "7000:7000"
+    #depends_on:
+      #- db
 
-  db:
-    container_name: django_postgres
-    build: docker/postgres
-    image: postgres_django_udemy_course
-    env_file: ./.env
-    ports:
-      - "5432:5432"
-    shm_size: '2gb'
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    environment:
-      TZ: America/Sao_Paulo
-      PGTZ: America/Sao_Paulo
-      POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  #db:
+    #container_name: django_postgres
+    #build: docker/postgres
+    #image: postgres_django_udemy_course
+    #env_file: ./.env
+    #ports:
+      #- "5432:5432"
+    #shm_size: '2gb'
+    #volumes:
+      #- postgres_data:/var/lib/postgresql/data
+    #environment:
+      #TZ: America/Sao_Paulo
+      #PGTZ: America/Sao_Paulo
+      #POSTGRES_DB: ${POSTGRES_DB}
+      #POSTGRES_USER: ${POSTGRES_USER}
+      #POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
-volumes:
-  postgres_data:
+#volumes:
+  #postgres_data:

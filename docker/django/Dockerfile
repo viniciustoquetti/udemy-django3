@@ -21,7 +21,7 @@ RUN usermod -aG 100 django
 
 USER django
 
-WORKDIR /home/django
+WORKDIR /code/app
 
-EXPOSE 8000
-# CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+EXPOSE 7000
+# CMD ["python", "manage.py", "runserver", "0.0.0.0:7000"]
